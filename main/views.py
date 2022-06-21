@@ -3,10 +3,10 @@ from main.models import *
 from django.contrib.auth import authenticate
 from django.contrib.auth import login,logout
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 
-@login_required
+# @login_required
 def HomeView(request):
     if request.method == 'POST':
         logout(request)
@@ -18,7 +18,7 @@ def HomeView(request):
     return render(request, 'index.html',context)
 
 
-@login_required
+# @login_required
 def StudentCreate(request):
     student = Student.objects.all().order_by('-id')
     context = {
@@ -38,7 +38,7 @@ def StudentCreate(request):
     return render(request, 'create.html', context)
 
 
-@login_required
+# @login_required
 def StudentEdit(request, pk):
     student = Student.objects.get(id=pk)
     if request.method == "POST":
