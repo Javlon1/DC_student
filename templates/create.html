@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './style.css' %}">
+<link rel="stylesheet" href="{% static './style1.css' %}">
+    <title>Student Create</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Student Create</h1>
+        <div class="wrap">
+            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data" class="my_unique_form">
+                {% csrf_token %}
+                <span><input name="name" type="text" placeholder="Name"  class="input_unique" required></span><hr width="100%">
+                <span><input name="surname" type="text" placeholder="Surname"  class="input_unique" required></span><hr width="100%">
+                <span><input name="age" type="number" placeholder="Age"  class="input_unique" required></span><hr width="100%">
+                <span><input name="address" type="text" placeholder="Address"  class="input_unique" required></span><hr width="100%">
+                <span><input name="studyed" type="text" placeholder="Studyed"  class="input_unique" required></span><hr width="100%">
+                <span><input name="job" type="text" placeholder="Job"  class="input_unique" required></span><hr width="100%">
+                <div class="my_btns">
+                    <button class="my_uniquebtn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+      </script>
+</body>
+</html>
