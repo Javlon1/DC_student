@@ -3,11 +3,10 @@
 {% block content %}
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>\
 <div class="content mt-3">
 	<div class="animated fadeIn">
 		<div class="row">
-
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
@@ -39,47 +38,15 @@
 									<td>{{i.studyed}}</td>
 									<td>{{i.job}}</td>
 									<td><a href="{% url 'edit' i.id %}"><ion-icon style="color: blue;" name="create-outline" ></ion-icon></a></td>
-									<td><button type="button" class="tabledit-delete-button" data-toggle="modal" data-target="#myModal{{i.id}}" style="color: red"><span class="ti-trash"></span></button></td>
+									<td><a href="{% url 'delete' i.id %}" type="button" class="tabledit-delete-button" style="border: none; color: red;" ><span class="ti-trash"></span></a></td>
 								</tr>
-								<!-- Modal -->
-								<div class="modal fade" id="myModal{{i.id}}" role="dialog">
-								  <div class="modal-dialog">
-								  <!-- Modal content-->
-									  <div class="modal-content">
-										  <div class="modal-body">
-										  <p>Do you really want to delete it ?</p>
-										  </div>
-										  <div class="modal-footer">
-										  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										  <a href="{% url 'delete' i.id %}" style="margin-top: 4px"><button type="button" class="btn btn-default" style="background-color: red; border: 1px solid #ddd; border-radius: 5px;">Delete.</button></a>
-										  </div>
-									  </div>
-								  </div>
-							  </div>
-							  <!-- End Modal -->
 								{% endfor %}
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Id</th>
-									<th>Name</th>
-									<th>Surname</th>
-									<th>Age</th>
-									<th>Address</th>
-									<th>Studyed</th>
-									<th>Job</th>
-									<th>Edit</th>
-									<th>Delete</th>
-								</tr>
-							</tfoot>
 						</table>
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div><!-- .animated -->
 </div><!-- .content -->
-
 {% endblock %}

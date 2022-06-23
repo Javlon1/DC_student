@@ -2,22 +2,39 @@
 {% load static %}
 {% block content %}
 
-    <div class="wrapper">
-        <h1>Student Create</h1>
-        <div class="wrap">
+  
+<div class="wrapper">
+    <h1 style="padding: 2%;">Student Create</h1>
+    <div class="wrap">
+        <div class="container-fluid">
             <form action="{% url 'create' %}" method="post" enctype="multipart/form-data" class="my_unique_form">
-                {% csrf_token %}
-                <span><input name="name" type="text" placeholder="Name"  class="input_unique" required></span><hr width="100%">
-                <span><input name="surname" type="text" placeholder="Surname"  class="input_unique" required></span><hr width="100%">
-                <span><input name="age" type="number" placeholder="Age"  class="input_unique" required></span><hr width="100%">
-                <span><input name="address" type="text" placeholder="Address"  class="input_unique" required></span><hr width="100%">
-                <span><input name="studyed" type="text" placeholder="Studyed"  class="input_unique" required></span><hr width="100%">
-                <span><input name="job" type="text" placeholder="Job"  class="input_unique" required></span><hr width="100%">
-                <div class="my_btns">
-                    <button class="my_uniquebtn">Save</button>
+                <div class="row">
+                    {% csrf_token %}
+                    <div class="col-2">
+                        <input name="name" type="text" placeholder="Name"  class="input_unique" required>
+                    </div>
+                    <div class="col-2">
+                        <input name="surname" type="text" placeholder="Surname"  class="input_unique" required>
+                    </div>
+                    <div class="col-2">
+                        <input name="age" type="number" placeholder="Age"  class="input_unique" required>
+                    </div>
+                    <div class="col-2">
+                        <input name="address" type="text" placeholder="Address"  class="input_unique" required>
+                    </div>
+                    <div class="col-2">
+                        <input name="studyed" type="text" placeholder="Studyed"  class="input_unique" required>
+                    </div>
+                    <div class="col-2">
+                        <input name="job" type="text" placeholder="Job"  class="input_unique" required>
+                    </div>
+                    <div class="col-2" style="padding: 2%;">
+                        <button style="margin-top: 15px; width: 100%; padding: 2%; border-radius: 1%; font-weight: 700; border: none; background-color: #272c33; color: #fff;" class="my_uniquebtn">Save</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
+</div>
 
     {% endblock %}

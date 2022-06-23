@@ -3,22 +3,37 @@
 {% block content %}
 
     <div class="wrapper">
-        <h1>Edit Students</h1>
+        <h1 style="padding: 2%;">Edit Students</h1>
         <div class="wrap">
-    
-            <form action="{% url 'edit' student.id %}" method="post" enctype="multipart/form-data" class="my_unique_form">
-                {% csrf_token %}
-                <span><input value="{{student.name}}" name="name" type="text" placeholder="name"  class="input_unique"></span><hr width="100%">
-                <span><input value="{{student.surname}}" name="surname" type="text" placeholder="surname"  class="input_unique"></span><hr width="100%">
-                <span><input value="{{student.age}}" name="age" type="number" placeholder="age"  class="input_unique"></span><hr width="100%">
-                <span><input value="{{student.address}}" name="address" type="text" placeholder="address"  class="input_unique"></span><hr width="100%">
-                <span><input value="{{student.studyed}}" name="studyed" type="text" placeholder="studyed"  class="input_unique"></span><hr width="100%">
-                <span><input value="{{student.job}}" name="job" type="text" placeholder="job"  class="input_unique"></span><hr width="100%">
-                <div class="my_btns">
-                    <button class="my_uniquebtn">Save</button>
-                </div>
-            </form>
+            <div class="container-fluid">
+                <form action="{% url 'edit' student.id %}" method="post" enctype="multipart/form-data" class="my_unique_form">
+                    <div class="row">
+                    {% csrf_token %}
+                    <div class="col-2">
+                        <input value="{{student.name}}" name="name" type="text" placeholder="name"  class="input_unique">
+                    </div>
+                    <div class="col-2">
+                        <input value="{{student.surname}}" name="surname" type="text" placeholder="surname"  class="input_unique">
+                    </div>
+                    <div class="col-2">
+                        <input value="{{student.age}}" name="age" type="number" placeholder="age"  class="input_unique">
+                    </div>
+                    <div class="col-2">
+                        <input value="{{student.address}}" name="address" type="text" placeholder="address"  class="input_unique">
+                    </div>
+                    <div class="col-2">
+                        <input value="{{student.studyed}}" name="studyed" type="text" placeholder="studyed"  class="input_unique">
+                    </div>
+                    <div class="col-2">
+                        <input value="{{student.job}}" name="job" type="text" placeholder="job"  class="input_unique">
+                    </div>
+                    <div class="col-2" style="padding: 2%;">
+                        <button style="margin-top: 15px; width: 100%; padding: 2%; border-radius: 1%; font-weight: 700; border: none; background-color: #272c33; color: #fff; class="my_uniquebtn">Save</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
-    {% endblock %}
+{% endblock %}

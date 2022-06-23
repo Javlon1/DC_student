@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="wrapper">
+        <h1 style="padding: 2%;">Info Create</h1>
+        <div class="wrap">
+            <div class="container-fluid">
+                <form action="{% url 'infocreate' %}" method="post" enctype="multipart/form-data" class="my_unique_form">
+                    <div class="row">
+                        {% csrf_token %}
+                        <div class="col-2">
+                            <span>Logo: <input name="logo" id='file' type="file" class="first_input_unique" required></span><hr width="100%">
+                        </div>
+                        <div class="col-2">
+                            <span>Image: <input name="img" id='file' type="file" class="first_input_unique" required></span><hr width="100%">
+                        </div>
+                    </div>
+                    <div class="col-2" style="padding: 2%;">
+                        <button style="margin-top: 15px; width: 100%; padding: 2%; border-radius: 1%; font-weight: 700; border: none; background-color: #272c33; color: #fff;" class="my_uniquebtn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+{% endblock %}

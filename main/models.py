@@ -1,6 +1,11 @@
+from distutils.command.upload import upload
 from django.db import models
 model = models.Model
 
+
+class Info(models.Model):
+    logo = models.ImageField(upload_to='logo/')
+    img = models.ImageField(upload_to='img/')
 
 
 class Student(model):
@@ -13,5 +18,3 @@ class Student(model):
 
     def __str__(self):
         return self.name
-
-        
